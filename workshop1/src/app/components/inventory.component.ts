@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { LineItem } from '../model';
 interface Fruit {
-  img:string;
+  image:string;
   label:string;
 }
 @Component({
@@ -13,12 +13,13 @@ interface Fruit {
 })
 export class InventoryComponent implements OnInit {
   fruitList: Fruit[]= [
-    {img:"assets/fruits/acorn_squash.png", label:"Acron Squash"},
-    {img:"assets/fruits/apple.png", label:"Apple"},
-    {img:"assets/fruits/bell_pepper.png", label:"Bell Pepper"},
-    {img:"assets/fruits/broccoli.png", label:"Broccoli"},
-    {img:"assets/fruits/corn.png",label:"Corn"}
+    {image:"assets/fruits/acorn_squash.png", label:"Acron Squash"},
+    {image:"assets/fruits/apple.png", label:"Apple"},
+    {image:"assets/fruits/bell_pepper.png", label:"Bell Pepper"},
+    {image:"assets/fruits/broccoli.png", label:"Broccoli"},
+    {image:"assets/fruits/corn.png",label:"Corn"}
   ]
+
   fruitImg="";
   fruitName="";
 
@@ -29,21 +30,24 @@ export class InventoryComponent implements OnInit {
 
   ngOnInit() {}
 
-  displayFruit(event:any){
-    console.log(">>",event.target.value);
-    this.fruitImg=this.fruitList[event.target.value].img;
+  displayFruit(event){
+    console.log(" >>", event.target.value);
+    this.fruitImg=this.fruitList[event.target.value].image;
     this.fruitName=this.fruitList[event.target.value].label;  
   }
 
   add(myInventory: NgForm){
     console.log("form: ",myInventory.value);
-    myInventory.resetForm;
-    this.fruitName="";
-    this.fruitImg="";
     const lineItem: LineItem ={
       label:this.fruitName,
       quantity:myInventory.value.quantity
     };
+    //fire the event with the payload
+    this.newLineItem.next(lineItem);
+    myInventory.resetForm;
+    this.fruitImg="";
+    this.fruitName="";
+
   }
 
 }
