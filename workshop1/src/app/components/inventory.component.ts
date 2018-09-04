@@ -27,8 +27,8 @@ export class InventoryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
   displayFruit(event:any){
     console.log(">>",event.target.value);
     this.fruitImg=this.fruitList[event.target.value].img;
