@@ -37,13 +37,13 @@ export class InventoryComponent implements OnInit {
 
   add(myInventory: NgForm){
     console.log("form: ",myInventory.value);
-    myInventory.resetForm;
-    this.fruitName="";
-    this.fruitImg="";
     const lineItem: LineItem ={
       label:this.fruitName,
       quantity:myInventory.value.quantity
     };
+    this.fruitName="";
+    this.fruitImg="";
+    myInventory.resetForm;
+    this.newLineItem.next(lineItem);
   }
-
 }

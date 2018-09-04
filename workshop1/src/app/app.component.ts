@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LineItem } from './model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +9,7 @@ import { LineItem } from './model';
 export class AppComponent {
   cart: LineItem[]=[];
   processLineItem(lineItem:LineItem){
-    this.cart.push(lineItem)
+    this.cart.unshift(lineItem);
     console.log("cart= ",this.cart);
   }
 }

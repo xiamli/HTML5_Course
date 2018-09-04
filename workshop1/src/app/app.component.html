@@ -1,2 +1,8 @@
 <h1> My Shopping Cart</h1>
 <app-inventory (newLineItem)="processLineItem($event)"></app-inventory>
+<h1>Added Items</h1>
+<ul>
+<li *ngFor="let c of cart">
+    {{c.label}}: {{c.quantity}}
+</li>
+</ul>

@@ -5,8 +5,8 @@
       <td>
         <div>
           <select name="fruitList" ngModel (change)="displayFruit($event)">
-              <option *ngFor="let i of fruitList; let i = index" 
-              [value]="i">{{i.label}}</option>
+              <option *ngFor="let f of fruitList; let i = index" 
+              [value]="i">{{f.label}}</option>
           </select>     
         </div>
         <div>
