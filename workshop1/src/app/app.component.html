@@ -3,6 +3,7 @@
 <h1>Added Items</h1>
 <ul>
 <li *ngFor="let c of cart">
-    {{c.label}}: {{c.quantity}}
+    <img [src]="c.imgurl" class="itemImg">
+    {{c.label}}:{{c.quantity}}
 </li>
 </ul>
