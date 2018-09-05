@@ -18,16 +18,10 @@
             Quantity:
         </div>
          <div>
-           <input type="number" name="quantity" min="1" ngModel>
+           <input type="number" name="quantity" required min="1" ngModel>
           </div>
           <button type="submit">Add</button>
       </td> 
     </tr>
   </table>
-  <div>
-    <h1>SHOPPING CART</h1>
-    <li *ngFor="let o of anotherCart">
-      {{o.label}}
-    </li>
-  </div>
 </form>

@@ -22,7 +22,6 @@ export class InventoryComponent implements OnInit {
 
   fruitImg="";
   fruitName="";
-  anotherCart: LineItem[]=[];
 
   @Output()
   newLineItem = new EventEmitter<LineItem>();
@@ -43,7 +42,6 @@ export class InventoryComponent implements OnInit {
       label:this.fruitName,
       quantity:myInventory.value.quantity
     };
-    this.anotherCart.push(lineItem);
     this.fruitName="";
     this.fruitImg="";
     myInventory.resetForm();
