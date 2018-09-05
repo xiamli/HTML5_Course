@@ -1,0 +1,8 @@
+#Set Up
+ng new workshop02
+ng add @angular/material
+npm install --save hammerjs
+npm install --save rxjs@6.2.2
+npm install --save @angular/flex-layout@6.0.0-beta.17
+npm install --save dexie
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
