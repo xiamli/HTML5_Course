@@ -1,20 +1,3 @@
-#Set Up
-ng new workshop02
-
-ng add @angular/material
-
-npm install --save hammerjs
-
-npm install --save rxjs@6.2.2
-
-npm install --save @angular/flex-layout@6.0.0-beta.17
-
-npm install --save dexie
-
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-//Add material module
-ng g m material --no--spec --flat --module app.module -d
-//Set up material module
 import {NgModule} from "@angular/core";
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -36,3 +19,4 @@ const MODULE=[
   imports:MODULE,
   exports:MODULE
 })
+export class MaterialModule { }
