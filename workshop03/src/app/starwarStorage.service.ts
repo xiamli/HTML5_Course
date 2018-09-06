@@ -22,13 +22,29 @@ export class SWStorageSVC {
     }
 
     //select character by id
-    selCharById(inputId:any): Promise<SWCharacter[]> {
+    /*selCharById(inputId:any): Promise<SWCharacter[]> {
         return (this.db['sw_characters']
          .filter(add =>{
              return(inputId.test(add.id));
          })
          .toArray()
      )
+    }*/
+
+    //select character by id
+    findById(inputId:number): Promise<SWCharacter> {
+        const p = new Promise<SWCharacter>((resolve,reject)=>{
+            this.db['sw_characters'].wehre('id').equals(inputId)
+            .toArray()
+            .then((result: SWCharacter[]) =>{
+                if(result.length>0){
+                    resolve(result[0]);//return id
+                }else{
+                    reject(inputId);
+                }
+            })
+        });
+        return (p);
     }
 
 

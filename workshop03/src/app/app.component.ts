@@ -20,7 +20,7 @@ export class AppComponent {
   @ViewChild('myForm')
   form:NgForm;
 
-  processForm(){
+  /*processForm(){
     this.searchTerm=this.form.value.searchTerm;
     this.swSVC.searchCharactor(this.searchTerm)
     .then(result =>{
@@ -34,7 +34,33 @@ export class AppComponent {
         console.log("Added Character ERROR: ",err);
       })
     })
+    .catch(err =>{
+      console.log("Process Form  ERROR: ",err);
+    })
+    this.form.resetForm();
+  }*/
+
+  //Another way to store 
+  //use .bind(this.<db service name> to indicate scope of this.)
+  processForm(){
+    this.searchTerm=this.form.value.searchTerm;
+    
+    this.swSVC.findById(this.searchTerm)
+    .then((result)=>{
+      console.log('found it: ',result);
+    },
+    (err)=>{
+      console.log('Not Found: ',result);
+
+
+  })
+
+    this.swSVC.searchCharactor(this.searchTerm)
+    .then(this.swStorageSv.addCharacter.bind(this.swStorageSv))
+      .catch(err =>{
+        console.log("Added Character ERROR: ",err);
+      })
     this.form.resetForm();
   }
-
+ 
 }
