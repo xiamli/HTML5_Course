@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   ]
 
   private contactList: Contact[]=[];
+  currentTab: Number =0;
 
 
  //svc is injected into the component
@@ -43,6 +44,8 @@ export class AppComponent implements OnInit {
     console.log('Contact:',contact);
     this.addressSvc.addNewContact(contact)
     .then(result =>{
+      //check if the new address is visible under the current
+      //tab.if it is reload the tab
       console.log("contact saved: ",result);
     })
     .catch(err =>{
@@ -51,6 +54,7 @@ export class AppComponent implements OnInit {
   }
 
   loadAddress(event: MatTabChangeEvent){
+    this.currentTab=event.index;
     const patt=this.tabs[event.index].pattern;
     this.addressSvc.selectContact(patt)
     .then(addr =>{
