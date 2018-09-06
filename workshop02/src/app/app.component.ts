@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
     {label:'U-Z', pattern: /^[u-z].*/i },
   ]
 
+  private contactList: Contact[]=[];
+
 
  //svc is injected into the component
   /* private addressService: ContactService;
@@ -50,10 +52,10 @@ export class AppComponent implements OnInit {
 
   loadAddress(event: MatTabChangeEvent){
     const patt=this.tabs[event.index].pattern;
-    console.log(' loadAddress event: ',patt);
     this.addressSvc.selectContact(patt)
     .then(addr =>{
       console.log('loadAddress contacts:',addr)
+      this.contactList=addr;
     })
     .catch(err =>{
       console.log('err: ',err);

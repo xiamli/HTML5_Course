@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Contact } from '../model';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-address-entry',
@@ -11,8 +12,7 @@ export class AddressEntryComponent implements OnInit {
 
   @Output()
   newAddress = new EventEmitter<Contact>();
-  constructor() { }
-
+  constructor(public snackBar: MatSnackBar) {}
   ngOnInit() {
   }
 
@@ -24,6 +24,9 @@ export class AddressEntryComponent implements OnInit {
     this.newAddress.next(<Contact>myContact.value);
     myContact.resetForm();
   }
-
-
+ openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 }

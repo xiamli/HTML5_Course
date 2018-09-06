@@ -24,10 +24,10 @@ export class ContactService {
 
     //select all order by name filter by pattern
     selectContact(pattern:any): Promise<Contact[]> {
-       return ( this.db['contacts']
+       return (this.db['contacts']
         .orderBy('name')
         .filter(add =>{
-            pattern.test(add.name);
+            return(pattern.test(add.name));
         })
         .toArray()
     )

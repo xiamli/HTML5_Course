@@ -7,6 +7,8 @@
 <app-address-entry (newAddress)="processContact($event)"></app-address-entry>
 <mat-tab-group (selectedTabChange)="loadAddress($event)">
     <mat-tab *ngFor="let l of tabs" [label]="l.label"> 
-     
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let i of contactList">{{i.name}}</mat-list-item>
+          </mat-list>
     </mat-tab>
 </mat-tab-group>
