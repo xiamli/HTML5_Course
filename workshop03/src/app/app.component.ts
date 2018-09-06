@@ -45,7 +45,7 @@ export class AppComponent {
   processForm(){
     this.searchTerm=this.form.value.searchTerm;
     
-    this.swSVC.findById(this.searchTerm)
+    this.swStorageSv.findById(this.searchTerm)
     .then((result)=>{
       console.log('found it: ',result);
     },
