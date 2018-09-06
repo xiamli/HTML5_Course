@@ -16,7 +16,7 @@ export class SWStorageSVC {
         });
     }
 
-    addCharacter(newCharacter: SWCharacter): Promise<string>{
+    addCharacter(newCharacter: SWCharacter): Promise<number>{
         //promise
         return (this.db['sw_characters'].put(newCharacter));
     }

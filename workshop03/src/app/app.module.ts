@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './/material.module';
 import { StarWarSVC } from './starwarSvc.service';
 import { SWStorageSVC } from './starwarStorage.service';
+
 @NgModule({
   declarations: [
     AppComponent
