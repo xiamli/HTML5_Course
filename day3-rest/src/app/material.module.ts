@@ -8,17 +8,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 
 const MODULE=[
-    FlexLayoutModule,MatToolbarModule,MatFormFieldModule,MatButtonModule,MatIconModule,MatInputModule
-    ,MatTabsModule,MatListModule,MatSnackBarModule
+  FlexLayoutModule,MatToolbarModule,MatFormFieldModule,MatButtonModule,MatIconModule,MatInputModule
+  ,MatTabsModule,MatListModule,MatSnackBarModule,MatCardModule
 ];
 
 @NgModule({
-    imports:MODULE,
-    exports:MODULE
+  imports:MODULE,
+  exports:MODULE
 })
-export class MaterialModule{
-
-}
+export class MaterialModule { }

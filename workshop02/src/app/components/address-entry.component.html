@@ -19,7 +19,8 @@ fxLayout="column" fxLayoutGap="2px">
       Clear
     </button>
       <button mat-flat-button type="submit" color="primary" 
-      [disabled]="contactForm.invalid">
+      [disabled]="contactForm.invalid"
+      (click)="openSnackBar('Create New Contact','Sccuess')">
       <mat-icon>favorite_border</mat-icon>
       Add
     </button>

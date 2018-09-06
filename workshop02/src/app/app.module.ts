@@ -10,11 +10,13 @@ import { AddressEntryComponent } from './components/address-entry.component';
 import {ContactService} from './address.service';
 
 import { fromEventPattern } from 'rxjs';
+import { AddressListComponent } from './components/address-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddressEntryComponent
+    AddressEntryComponent,
+    AddressListComponent
   ],
   imports: [
     BrowserModule,

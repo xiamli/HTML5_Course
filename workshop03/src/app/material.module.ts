@@ -11,14 +11,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const MODULE=[
-    FlexLayoutModule,MatToolbarModule,MatFormFieldModule,MatButtonModule,MatIconModule,MatInputModule
-    ,MatTabsModule,MatListModule,MatSnackBarModule
+  FlexLayoutModule,MatToolbarModule,MatFormFieldModule,MatButtonModule,MatIconModule,MatInputModule
+  ,MatTabsModule,MatListModule,MatSnackBarModule
 ];
 
 @NgModule({
-    imports:MODULE,
-    exports:MODULE
+  imports:MODULE,
+  exports:MODULE
 })
-export class MaterialModule{
-
-}
+export class MaterialModule { }
