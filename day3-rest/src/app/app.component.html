@@ -1,29 +1,43 @@
-<mat-toolbar color="accent">Giphy</mat-toolbar>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  </head>
+<div>
+    <mat-toolbar class="tollbar" fxLayout="row" fxLayoutAlign="space-between center">
+        <img src="/assets/menu.png" class="logo">
+        <div fxLayout="row" fxLayoutGap="8px">
+            <mat-icon>query_builder</mat-icon>
+            <mat-icon>favorite_border</mat-icon>
+            <mat-icon>face</mat-icon>
+        </div>
+        
+      </mat-toolbar>
+</div>
 <form #myForm="ngForm" (ngSubmit)="submitTerm(myForm)"
-fxLayout="row" fxLayoutAlign="space-between centre">
-  <mat-form-field fxLayoutAlign="strech">
-    <input matInput placeholder="What are you looking for"
-    name="searchTerm" required ngModel>
+fxLayout="row" fxLayoutAlign="space-between">
+  <mat-form-field class="example-full-width">
+    <input type="search" matInput placeholder="What are you looking for"
+    name="searchTerm" required ngModel class="inputBar">
   </mat-form-field>
   <button type="submit" 
-  [disabled]="myForm.invalid" mat-raised-button color="accent">
-      <mat-icon>grade</mat-icon>
+  [disabled]="myForm.invalid" mat-button color="accent">
+      <mat-icon>search</mat-icon>
     </button>
 </form>
-<div>
+<div fxLayout="column" fxLayoutAlign="center">
     <mat-card *ngFor="let g of giphy" class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{g.title}}</mat-card-title>
-          <mat-card-subtitle>{{g.title}}</mat-card-subtitle>
+          <mat-card-title>{{searchTerm}}</mat-card-title>
+          <mat-card-subtitle>{{g.dateTime}}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image [src]="g.imgURL" >
         <mat-card-content>
           <p>
+            {{g.title}}
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
+          <button mat-button><mat-icon>favorite_border</mat-icon></button>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>

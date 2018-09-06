@@ -1,13 +1,25 @@
-form {
-    margin: 10px;
-}
 
+form {
+    margin: 20px;
+    
+}
+.tollbar{
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+
+}
+.logo{
+  height:60px;
+}
+.example-full-width {
+  width: 200%;
+}
 .example-card {
     max-width: 300px;
     margin: 20px;
   }
   
   .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-image: url('/assets/logo.png');
     background-size: cover;
   }

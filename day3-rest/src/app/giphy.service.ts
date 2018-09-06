@@ -10,7 +10,7 @@ export class GiphyService{
     //inject httpclient service into ciphyservice
     constructor(private http:HttpClient){}
 
-        search(searchTerm: string, limit =3,offset=0):Promise<Giphy[]>{
+        search(searchTerm: string, limit =10,offset=0):Promise<Giphy[]>{
            //construct query parameter
             const params= new HttpParams()
             .set('api_key',this.API_KEY)
@@ -26,8 +26,10 @@ export class GiphyService{
                const data = result.data;
                for(let d of data){
                    g.push({
+                       name:d.name,
                        title:d.title,
-                       imgURL:d.images.fixed_width.url
+                       imgURL:d.images.fixed_width.url,
+                       dateTime:d.import_datetime
                    })
                }
                return(g);
