@@ -11,7 +11,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 
-
 const MODULE=[
   FlexLayoutModule,MatToolbarModule,MatFormFieldModule,MatButtonModule,MatIconModule,MatInputModule
   ,MatTabsModule,MatListModule,MatSnackBarModule,MatCardModule,MatDividerModule

@@ -4,6 +4,7 @@ import { StarWarSVC } from '../starwarSvc.service';
 import { SWStorageSVC } from '../starwarStorage.service';
 import { SWCharacter } from '../model';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -16,13 +17,12 @@ export class AddCharacterComponent {
   searchResult:SWCharacter;
 
   constructor(private swSVC:StarWarSVC,private swStorageSv:SWStorageSVC,
-    private router:Router ) { }
+    private router:Router,public snackBar: MatSnackBar ) { }
  //to directly access the form
  @ViewChild('myForm')
  form:NgForm;
 
   ngOnInit() {
-    console.log("in add character");
   }
 
   processForm(){
@@ -45,5 +45,11 @@ export class AddCharacterComponent {
 
 goBack(){
   this.router.navigate(['/']);
+}
+
+openSnackBar(msg:string,status:string){
+  this.snackBar.open(msg, status, {
+    duration: 2000,
+  });
 }
 }

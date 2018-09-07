@@ -25,7 +25,6 @@ export class PeopleListComponent implements OnInit {
   
   addPeople(){
     this.router.navigate(['/add']);
-    console.log("Go ao add people");
   }
 
 }

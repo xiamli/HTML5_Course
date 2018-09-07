@@ -2,7 +2,7 @@
   <img src="/assets/icon_head.png" class="icon">
     <button mat-icon-button type="cancel" (click)="goBack()"
             color="white">
-          <mat-icon>cancel</mat-icon>
+          <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>
 
@@ -10,13 +10,14 @@
   <mat-form-field >
       <input matInput type="number" placeholder="Which character are you looking for" 
       name="searchTerm" required min='1' ngModel>
-      <mat-hint>Please enter a number</mat-hint>
+      <mat-hint>Enter Starwar character ID, see <a href="https://swapi.co" target="_blank">swapi.co</a></mat-hint>
     </mat-form-field>
-    <div>
+    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="10px">
       <button mat-icon-button type="clear" color="accent">
         <mat-icon>clear</mat-icon>
       </button>
-    <button mat-icon-button type="submit" [disabled]="myForm.invalid" color="accent">
+    <button mat-icon-button type="submit" [disabled]="myForm.invalid" 
+            color="accent" (click)="openSnackBar('Adding new character', 'Sccuess!')">
         <mat-icon>add</mat-icon>
       </button>
     </div>
