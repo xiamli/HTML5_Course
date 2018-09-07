@@ -42,25 +42,32 @@ export class AppComponent {
 
   //Another way to store 
   //use .bind(this.<db service name> to indicate scope of this.)
-  processForm(){
-    this.searchTerm=this.form.value.searchTerm;
-    
-    this.swStorageSv.findById(this.searchTerm)
-    .then((result)=>{
-      console.log('found it: ',result);
-    },
-    (err)=>{
-      console.log('Not Found: ',result);
-
-
-  })
-
-    this.swSVC.searchCharactor(this.searchTerm)
+  
+    /*this.swSVC.searchCharactor(this.searchTerm)
     .then(this.swStorageSv.addCharacter.bind(this.swStorageSv))
       .catch(err =>{
         console.log("Added Character ERROR: ",err);
       })
     this.form.resetForm();
-  }
+  }*/
+
+  processForm(){
+    this.searchTerm=this.form.value.searchTerm;
+    
+    this.swStorageSv.findById(this.searchTerm)
+    .then(
+      (result)=>{
+      console.log('found it: ',result);
+    },
+    this.swSVC.searchCharactor.bind(this.swSVC)
+    )
+    .then(this.swStorageSv.addCharacter.bind(this.swStorageSv))
+    .catch(
+      (err)=>{
+        console.log('Not Found: ',err);  
+  })
+  this.form.resetForm();
+}
+
  
 }
