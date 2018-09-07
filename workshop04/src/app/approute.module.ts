@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 const ROUTES:Routes=[
+ /* {path:'',component:},
   {path:'',component:},
   {path:'',component:},
   {path:'',component:},
-  {path:'',component:},
-  {path:'',component:}
+  {path:'',component:}*/
 ]
 @NgModule({
   imports: [
