@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PeopleListComponent } from './components/people-list.component';
 import { AddCharacterComponent } from './components/add-character.component';
+import { DisplayCharComponent } from './components/display-char.component';
 
 const ROUTES:Routes=[
  /* {path:'',component:},*/
  {path:'', component:PeopleListComponent},
  {path:'character', component:PeopleListComponent},
  {path:'add', component:AddCharacterComponent},
+ {path:'detail/:cId', component:DisplayCharComponent},
 //Catch all - anything cannot match go to / means to to path ''
  { path: '**', redirectTo: '/', pathMatch: 'full'}
 ]

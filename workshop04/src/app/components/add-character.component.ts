@@ -30,15 +30,25 @@ export class AddCharacterComponent {
     
     this.swStorageSv.findById(this.searchTerm)
     .then(
-      (result)=>{
-      console.log('found it: ',result);
+      (result)=>{//resolve
+        this.router.navigate(['/']);
+        console.log('found it: ',result);
+        throw false;//throw to catch 
     },
     this.swSVC.searchCharactor.bind(this.swSVC)
     )
     .then(this.swStorageSv.addCharacter.bind(this.swStorageSv))
+    .then(id=>{
+      console.log("id: ",id);
+      this.router.navigate(['/'],{queryParams:{message: `Saved ${id}`}});
+    })
     .catch(
-      (err)=>{
-        console.log('Not Found: ',err);  
+      err=>{
+        if(err){
+          return;
+        }
+        console.error('>>>>>ERROR: ',err)
+        this.router.navigate(['/'],{queryParams:{message:`Error: ${err}`}});
   })
   this.form.resetForm();
 }

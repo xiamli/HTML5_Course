@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SWStorageSVC } from '../starwarStorage.service';
 import { SWCharacter } from '../model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-people-list',
   templateUrl: './people-list.component.html',
@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class PeopleListComponent implements OnInit {
 
   private allCharacter: SWCharacter[]=[];
-  constructor(private swDBSvc:SWStorageSVC,private router:Router) {}
+  constructor(private swDBSvc:SWStorageSVC,private router:Router,
+              private activeRoute:ActivatedRoute) {}
 
   ngOnInit() {
     this.swDBSvc.selectAllCharacter()

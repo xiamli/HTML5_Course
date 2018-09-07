@@ -11,12 +11,14 @@ import { StarWarSVC } from './starwarSvc.service';
 import { ApprouteModule } from './/approute.module';
 import { PeopleListComponent } from './components/people-list.component';
 import { AddCharacterComponent } from './components/add-character.component';
+import { DisplayCharComponent } from './components/display-char.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleListComponent,
-    AddCharacterComponent
+    AddCharacterComponent,
+    DisplayCharComponent
   ],
   imports: [
     BrowserModule,

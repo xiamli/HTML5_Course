@@ -27,6 +27,7 @@ export class SWStorageSVC {
             .toArray()
         );
     }
+
     //select character by id
     findById(inputId:number): Promise<SWCharacter> {
         const p = new Promise<SWCharacter>((resolve,reject)=>{
