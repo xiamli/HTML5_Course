@@ -8,11 +8,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 const MODULE=[
   FlexLayoutModule,MatToolbarModule,MatFormFieldModule,MatButtonModule,MatIconModule,MatInputModule
-  ,MatTabsModule,MatListModule,MatSnackBarModule
+  ,MatTabsModule,MatListModule,MatSnackBarModule,MatCardModule,MatDividerModule
 ];
 
 @NgModule({

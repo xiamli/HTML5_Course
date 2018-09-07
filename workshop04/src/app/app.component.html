@@ -1,14 +1,3 @@
-<mat-toolbar color="accent" fxLayout="row" fxLayoutGap="5px">
-STAR WAR
-</mat-toolbar>
-
-<form #myForm="ngForm" (ngSubmit)="processForm()">
-  <mat-form-field >
-      <input matInput type="number" placeholder="What are you looking for" 
-      name="searchTerm" required min='1' ngModel>
-    </mat-form-field>
-    <button mat-icon-button type="submit"
-    [disabled]="myForm.invalid" color="accent">
-        <mat-icon>favorite</mat-icon>
-      </button>
-</form>
+<router-outlet>
+    
+</router-outlet>

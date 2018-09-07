@@ -1,0 +1,14 @@
+<mat-toolbar color="accent" fxLayout="row" fxLayout="row" fxLayoutAlign="space-between center">  
+  <img src="/assets/icon_head.png" class="icon">
+    <button mat-icon-button type="button" (click)="addPeople()"
+            color="white">
+          <mat-icon>favorite</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-nav-list >
+   <h2 mat-subheader>Characters</h2>
+        <a *ngFor="let c of allCharacter" [routerLink]="['/detail',c.id]">
+          <mat-list-item>{{c.name}}</mat-list-item>
+      </a>
+</mat-nav-list>

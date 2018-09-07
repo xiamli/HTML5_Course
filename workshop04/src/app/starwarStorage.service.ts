@@ -21,16 +21,12 @@ export class SWStorageSVC {
         return (this.db['sw_characters'].put(newCharacter));
     }
 
-    //select character by id
-    /*selCharById(inputId:any): Promise<SWCharacter[]> {
-        return (this.db['sw_characters']
-         .filter(add =>{
-             return(inputId.test(add.id));
-         })
-         .toArray()
-     )
-    }*/
-
+    selectAllCharacter():Promise<SWCharacter[]>{
+        return(
+            this.db['sw_characters'].orderBy('name')
+            .toArray()
+        );
+    }
     //select character by id
     findById(inputId:number): Promise<SWCharacter> {
         const p = new Promise<SWCharacter>((resolve,reject)=>{
@@ -41,6 +37,21 @@ export class SWStorageSVC {
                     resolve(result[0]);//return id
                 }else{
                     reject(inputId);
+                }
+            })
+        });
+        return (p);
+    }
+
+    findByName(nameIpt:string): Promise<SWCharacter[]> {
+        const p = new Promise<SWCharacter[]>((resolve,reject)=>{
+            this.db['sw_characters'].where('name').equals(nameIpt)
+            .toArray()
+            .then((result: SWCharacter[]) =>{
+                if(result.length>0){
+                    resolve(result);//return name
+                }else{
+                    reject(nameIpt);
                 }
             })
         });

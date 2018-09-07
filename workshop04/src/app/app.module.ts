@@ -9,10 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { SWStorageSVC } from './starwarStorage.service';
 import { StarWarSVC } from './starwarSvc.service';
 import { ApprouteModule } from './/approute.module';
+import { PeopleListComponent } from './components/people-list.component';
+import { AddCharacterComponent } from './components/add-character.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PeopleListComponent,
+    AddCharacterComponent
   ],
   imports: [
     BrowserModule,
