@@ -11,10 +11,12 @@ import {Giphy} from './model'
 export class AppComponent {
 
   giphy:Giphy[]=[];
+  searchTerm:string;
   constructor(private giphysvc:GiphyService){}
 
   submitTerm(form:NgForm){
     console.log("submit a new term",form.value.searchTerm);
+    this.searchTerm=form.value.searchTerm;
     this.giphysvc.search(form.value.searchTerm)
     .then((result:Giphy[])=>{
       this.giphy=result;

@@ -40,7 +40,8 @@ export class InventoryComponent implements OnInit {
     console.log("form: ",myInventory.value);
     const lineItem: LineItem ={
       label:this.fruitName,
-      quantity:myInventory.value.quantity
+      quantity:myInventory.value.quantity,
+      imgurl:this.fruitImg
     };
     this.fruitName="";
     this.fruitImg="";
